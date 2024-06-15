@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div id="pokedex">
+      <div id="search-container">
+        <input id="search-input" required />
+        <button id="search-button" onclick="handleSearch()">Search</button>
+      </div>
+      <div id="sprite-container">
+        <img id="sprite" />
+        <div id="types"></div>
+      </div>
+      <div id="table">
+        <p>Name:</p>
+        <p class="stat" id="pokemon-name"></p>
+        <p>ID:</p>
+        <p class="stat" id="pokemon-id"></p>
+        <p>Weight:</p>
+        <p class="stat" id="weight"></p>
+        <p>Height:</p>
+        <p class="stat" id="height"></p>
+        <p>Hp:</p>
+        <p class="stat" id="hp"></p>
+        <p>Attack:</p>
+        <p class="stat" id="attack"></p>
+        <p>Defense:</p>
+        <p class="stat" id="defense"></p>
+        <p>Sp.Attack:</p>
+        <p class="stat" id="special-attack"></p>
+        <p>Sp.Defense:</p>
+        <p class="stat" id="special-defense"></p>
+        <p>Speed:</p>
+        <p class="stat" id="speed"></p>
+      </div>
+    </div>
+  </body>
+</html>
