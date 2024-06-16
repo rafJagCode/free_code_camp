@@ -1,0 +1,80 @@
+:root {
+  --bg: #3b3b4f;
+  --blue: #2f5ab7;
+  --btn: #3096f7;
+  --border1: 0 0 0 4px black;
+  --border2: 0 0 0 5px #929eb4;
+  --border3: 0 0 0 6px #b0c5e1;
+  --search: #36373b;
+}
+body {
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  height: 100vh;
+}
+#phone {
+  position: relative;
+  box-sizing: border-box;
+  width: 220px;
+  height: 420px;
+  background: var(--blue);
+  border-radius: 30px;
+  box-shadow: var(--border1), var(--border2), var(--border3);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+#camera {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  translate: -50% -50%;
+  width: 14px;
+  height: 12px;
+  background: black;
+  border-radius: 0 0 50% 50%;
+  &::before {
+    content: "";
+    background: #b0c5e1;
+    aspect-ratio: 1;
+    height: 7px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+}
+#user-input {
+  box-sizing: border-box;
+  background: var(--search);
+  padding: 8px 10px;
+  color: white;
+  justify-self: center;
+  border: none;
+  height: 32px;
+  font-size: 14px;
+  border-radius: 15px;
+  margin-top: 35px;
+}
+#results-div {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+#buttons {
+  margin: 30px auto;
+}
+.btn {
+  width: 80px;
+  background: var(--btn);
+  padding: 10px 0;
+  color: white;
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
+  font-weight: medium;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+}
