@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cash Register</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="title">Cash Register Project</h1>
+      <p id="change-due"></p>
+      <div id="input-div">
+        <p id="info">Enter cash from customer:</p>
+        <input id="cash" type="number" />
+        <button id="purchase-btn" onClick="handleClick()">Purchase</button>
+      </div>
+      <div id="register">
+        <div id="screen">
+          <div id="screen-display"></div>
+        </div>
+        <div id="connector"></div>
+        <div id="register-body">
+          <table id="keyboard">
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+          </table>
+          <table id="table">
+            <tr>
+              <th>Change in Drawer:</th>
+            </tr>
+            <tr>
+              <td>PENNIES:</td>
+              <td id="penny"></td>
+            </tr>
+            <tr>
+              <td>NICKELS:</td>
+              <td id="nickel"></td>
+            </tr>
+            <tr>
+              <td>DIMES:</td>
+              <td id="dime"></td>
+            </tr>
+            <tr>
+              <td>QUARTERS:</td>
+              <td id="quarter"></td>
+            </tr>
+            <tr>
+              <td>ONES:</td>
+              <td id="one"></td>
+            </tr>
+            <tr>
+              <td>FIVES:</td>
+              <td id="five"></td>
+            </tr>
+            <tr>
+              <td>TENS:</td>
+              <td id="ten"></td>
+            </tr>
+            <tr>
+              <td>TWENTIES:</td>
+              <td id="twenty"></td>
+            </tr>
+            <tr>
+              <td>HUNDREDS:</td>
+              <td id="one-hundred"></td>
+            </tr>
+          </table>
+        </div>
+        <div id="drawer"></div>
+      </div>
+    </div>
+  </body>
+</html>

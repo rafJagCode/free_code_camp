@@ -1,0 +1,135 @@
+:root {
+  --terminal: #06f700;
+  --text: #dfdfe2;
+  --bg: #0a0a23;
+  --blue: #99c9ff;
+  --yellow: #fecc4c;
+}
+body {
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+#container {
+  display: grid;
+  justify-content: center;
+}
+#title {
+  color: var(--text);
+  font-size: 2.5rem;
+  text-align: center;
+}
+#change-due {
+  color: var(--text);
+  text-align: center;
+}
+#input-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+#info {
+  text-align: center;
+  color: var(--text);
+  font-size: 18px;
+  margin: 0;
+}
+#cash {
+  padding: 10px;
+  height: 30px;
+  box-sizing: border-box;
+  width: 300px;
+}
+#purchase-btn {
+  background: var(--yellow);
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border-color: #feac32;
+  border-width: 3px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #0a0a23;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+}
+#register {
+  margin: auto;
+  margin-top: 35px;
+}
+#screen {
+  background: var(--blue);
+  height: 50px;
+  width: 200px;
+  margin-left: 40px;
+  display: grid;
+  place-items: center;
+}
+#screen-display {
+  background: black;
+  color: var(--terminal);
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#connector {
+  background: var(--blue);
+  height: 30px;
+  width: 40px;
+  margin-left: 60px;
+}
+#register-body {
+  position: relative;
+  background: var(--blue);
+  height: 250px;
+  width: 325px;
+  border-radius: 35px 35px 0 0;
+}
+#keyboard {
+  position: absolute;
+  left: 35px;
+  top: 35px;
+}
+#keyboard td {
+  background: orangered;
+  font-weight: bold;
+  width: 20px;
+  height: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+#table {
+  position: absolute;
+  color: var(--terminal);
+  background: black;
+  border: 4px solid darkgray;
+  padding: 5px;
+  font-size: 12px;
+  right: 35px;
+  top: 50%;
+  translate: 0 -50%;
+}
+#drawer {
+  position: relative;
+  background: var(--blue);
+  height: 50px;
+  width: 325px;
+  margin-top: 10px;
+  &::before {
+    content: "";
+    background: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    aspect-ratio: 1;
+    height: 15px;
+    border-radius: 50%;
+  }
+}
