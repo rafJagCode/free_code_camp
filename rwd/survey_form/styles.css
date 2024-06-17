@@ -1,0 +1,90 @@
+:root {
+  --fs700: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+  --fs500: clamp(1.125rem, 1vw + 0.75rem, 1.75rem);
+  --fs400: clamp(0.875rem, 1vw + 0.5rem, 1.5rem);
+  --fs100: clamp(0.75rem, 1vw + 0.5rem, 1.125rem);
+  --blue: #33658a;
+  --dark: rgba(21, 33, 40, 0.45);
+  --green: #4fb286;
+  --font-color: #f1edee;
+  --side-margin: 20px;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+body {
+  background-repeat: no-repeat;
+  background: linear-gradient(
+    13deg,
+    rgba(51, 101, 138, 1) 40%,
+    rgba(34, 57, 74, 1) 80%
+  );
+  font-family: Tahoma, sans-serif;
+  font-size: var(--fs100);
+  color: var(--font-color);
+}
+label,
+input {
+  font-size: var(--fs100);
+}
+select,
+input[type="checkbox"],
+input[type="radio"],
+button {
+  cursor: pointer;
+}
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]) {
+  cursor: pointer;
+}
+input,
+select,
+option,
+textarea {
+  font-size: var(--fs100);
+  padding: 10px;
+  border-radius: 5px;
+}
+.survey-container {
+  max-width: 700px;
+  width: calc(100% - 2 * var(--side-margin));
+  margin: 2% auto 0 auto;
+}
+.form-group {
+  display: grid;
+  margin: 20px 0;
+}
+#title {
+  font-size: var(--fs700);
+  text-align: center;
+}
+#description {
+  font-size: var(--fs500);
+  text-align: center;
+  font-style: italic;
+}
+#survey-form {
+  background: var(--dark);
+  padding: 25px 40px;
+  border-radius: 5px;
+}
+#additional-info {
+  min-height: 120px;
+}
+#submit {
+  font-size: var(--fs100);
+  font-weight: bold;
+  background: var(--green);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  color: var(--text-color);
+}
+.m-standard {
+  margin: 10px 0 5px 0;
+}

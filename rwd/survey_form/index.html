@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="survey-container">
+      <h1 id="title">Survey Form</h1>
+      <p id="description">Please fill in this short survey form</p>
+      <form id="survey-form">
+        <div class="form-group">
+          <label class="m-standard" id="name-label" for="name"
+            >Your Name:</label
+          >
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter your name here"
+            required
+          />
+          <label class="m-standard" id="email-label" for="email"
+            >E-mail Addres:</label
+          >
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter your email here"
+            required
+          />
+          <label class="m-standard" id="number-label" for="number"
+            >Your Age:</label
+          >
+          <input
+            id="number"
+            type="number"
+            placeholder="Enter your age here"
+            min="1"
+            max="150"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label class="m-standard" for="dropdown"
+            >Select your experience level:</label
+          >
+          <select id="dropdown" required>
+            <option value="">Select option</option>
+            <option value="junior">Junior</option>
+            <option value="regular">Regular</option>
+            <option value="mid">Mid</option>
+            <option value="senior">Senior</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p class="m-standard">Select area of your expertise:</p>
+          <label>
+            <input type="radio" value="frontend" name="radio" required />
+            Frontend
+          </label>
+          <label>
+            <input type="radio" value="backend" name="radio" required />
+            Backend
+          </label>
+          <label>
+            <input type="radio" value="devops" name="radio" required />
+            DevOps
+          </label>
+          <label>
+            <input type="radio" value="databases" name="radio" required />
+            Databases
+          </label>
+        </div>
+        <div class="form-group">
+          <p class="m-standard">
+            Select languages that you had experience with:
+          </p>
+          <label>
+            <input type="checkbox" value="assembly" name="checkboxes" />
+            Assembly
+          </label>
+          <label>
+            <input type="checkbox" value="javascript" name="checkboxes" />
+            Javascript
+          </label>
+          <label>
+            <input type="checkbox" value="python" name="checkboxes" />
+            Python
+          </label>
+          <label>
+            <input type="checkbox" value="php" name="checkboxes" />
+            Php
+          </label>
+          <label>
+            <input type="checkbox" value="c#" name="checkboxes" />
+            C#
+          </label>
+          <label>
+            <input type="checkbox" value="java" name="checkboxes" />
+            Java
+          </label>
+          <label>
+            <input type="checkbox" value="rust" name="checkboxes" />
+            Rust
+          </label>
+          <label>
+            <input type="checkbox" value="ruby" name="checkboxes" />
+            Ruby
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="m-standard" for="additional-info"
+            >Here you can add any additional informations:</label
+          >
+          <textarea
+            id="additional-info"
+            placeholder="Anything you want to share with us..."
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button id="submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
