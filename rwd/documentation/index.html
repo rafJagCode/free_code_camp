@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Documentation</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Vue Documentation</header>
+      <ul>
+        <li><a href="#What_is_Vue?" class="nav-link">What is Vue?</a></li>
+        <li>
+          <a href="#Props_Validation" class="nav-link">Props Validation</a>
+        </li>
+        <li>
+          <a href="#Single-File_Components" class="nav-link"
+            >Single-File Components</a
+          >
+        </li>
+        <li><a href="#Composition_API" class="nav-link">Composition API</a></li>
+        <li>
+          <a href="#Reactivity_Fundamentals" class="nav-link"
+            >Reactivity Fundamentals</a
+          >
+        </li>
+        <li>
+          <a href="#Computed_Properties" class="nav-link"
+            >Computed Properties</a
+          >
+        </li>
+        <li>
+          <a href="#References" class="nav-link">References</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="What_is_Vue?">
+        <header>What is Vue?</header>
+        <article>
+          <p>
+            Vue (pronounced /vjuː/, like view) is a JavaScript framework for
+            building user interfaces. It builds on top of standard HTML, CSS,
+            and JavaScript and provides a declarative, component-based
+            programming model that helps you efficiently develop user interfaces
+            of any complexity.
+          </p>
+          <p>Here is a minimal example:</p>
+          <code>
+            import&nbsp;{&nbsp;createApp,&nbsp;ref&nbsp;}&nbsp;from&nbsp;'vue'<br /><br />createApp({<br />&nbsp;&nbsp;setup()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count:&nbsp;ref(0)<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;}<br />}).mount('#app')<br />
+          </code>
+          <code>
+            &lt;div&nbsp;id="app"&gt;<br />&nbsp;&nbsp;&lt;button&nbsp;@click="count++"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;Count&nbsp;is:&nbsp;{{&nbsp;count&nbsp;}}<br />&nbsp;&nbsp;&lt;/button&gt;<br />&lt;/div&gt;<br />
+          </code>
+        </article>
+      </section>
+      <section class="main-section" id="Single-File_Components">
+        <header>Single-File Components</header>
+        <article>
+          <p>
+            In most build-tool-enabled Vue projects, we author Vue components
+            using an HTML-like file format called Single-File Component (also
+            known as *.vue files, abbreviated as SFC). A Vue SFC, as the name
+            suggests, encapsulates the component's logic (JavaScript), template
+            (HTML), and styles (CSS) in a single file. Here's the previous
+            example, written in SFC format:
+          </p>
+          <code>
+            &lt;script&nbsp;setup&gt;<br />import&nbsp;{&nbsp;ref&nbsp;}&nbsp;from&nbsp;'vue'<br />const&nbsp;count&nbsp;=&nbsp;ref(0)<br />&lt;/script&gt;<br /><br />&lt;template&gt;<br />&nbsp;&nbsp;&lt;button&nbsp;@click="count++"&gt;Count&nbsp;is:&nbsp;{{&nbsp;count&nbsp;}}&lt;/button&gt;<br />&lt;/template&gt;<br /><br />&lt;style&nbsp;scoped&gt;<br />button&nbsp;{<br />&nbsp;&nbsp;font-weight:&nbsp;bold;<br />}<br />&lt;/style&gt;<br />
+          </code>
+        </article>
+      </section>
+      <section class="main-section" id="Props_Validation">
+        <header>Props Validation</header>
+        <article>
+          <p>
+            Components can specify requirements for their props, such as the
+            types you've already seen. If a requirement is not met, Vue will
+            warn you in the browser's JavaScript console. This is especially
+            useful when developing a component that is intended to be used by
+            others.
+          </p>
+          <p>Additional details:</p>
+          <ul>
+            <li>
+              All props are optional by default, unless required: true is
+              specified.
+            </li>
+            <li>
+              An absent optional prop other than Boolean will have undefined
+              value.
+            </li>
+            <li>
+              The Boolean absent props will be cast to false. You can change
+              this by setting a default for it — i.e.: default: undefined to
+              behave as a non-Boolean prop.
+            </li>
+            <li>
+              If a default value is specified, it will be used if the resolved
+              prop value is undefined - this includes both when the prop is
+              absent, or an explicit undefined value is passed.
+            </li>
+          </ul>
+          <p>The type can be one of the following native constructors:</p>
+          <ul>
+            <li>String</li>
+            <li>Number</li>
+            <li>Boolean</li>
+            <li>Array</li>
+            <li>Object</li>
+            <li>Date</li>
+            <li>Function</li>
+            <li>Symbol</li>
+            <li>Error</li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Composition_API">
+        <header>Composition API</header>
+        <article>
+          <p>
+            With Composition API, we define a component's logic using imported
+            API functions. In SFCs, Composition API is typically used with
+            &lt;script setup&gt;. The setup attribute is a hint that makes Vue
+            perform compile-time transforms that allow us to use Composition API
+            with less boilerplate. For example, imports and top-level variables
+            / functions declared in &lt;script setup&gt; are directly usable in
+            the template.
+          </p>
+          <code>
+            &lt;script&nbsp;setup&gt;<br />import&nbsp;{&nbsp;ref,&nbsp;onMounted&nbsp;}&nbsp;from&nbsp;'vue'<br /><br />//&nbsp;reactive&nbsp;state<br />const&nbsp;count&nbsp;=&nbsp;ref(0)<br /><br />//&nbsp;functions&nbsp;that&nbsp;mutate&nbsp;state&nbsp;and&nbsp;trigger&nbsp;updates<br />function&nbsp;increment()&nbsp;{<br />&nbsp;&nbsp;count.value++<br />}<br /><br />//&nbsp;lifecycle&nbsp;hooks<br />onMounted(()&nbsp;=&gt;&nbsp;{<br />&nbsp;&nbsp;console.log(`The&nbsp;initial&nbsp;count&nbsp;is&nbsp;${count.value}.`)<br />})<br />&lt;/script&gt;<br /><br />&lt;template&gt;<br />&nbsp;&nbsp;&lt;button&nbsp;@click="increment"&gt;Count&nbsp;is:&nbsp;{{&nbsp;count&nbsp;}}&lt;/button&gt;<br />&lt;/template&gt;<br />
+          </code>
+        </article>
+      </section>
+      <section class="main-section" id="Reactivity_Fundamentals">
+        <header>Reactivity Fundamentals</header>
+        <article>
+          <p>
+            In Composition API, the recommended way to declare reactive state is
+            using the ref() function:
+          </p>
+          <code
+            >import&nbsp;{&nbsp;ref&nbsp;}&nbsp;from&nbsp;'vue'<br /><br />const&nbsp;count&nbsp;=&nbsp;ref(0)<br
+          /></code>
+          <p>
+            ref() takes the argument and returns it wrapped within a ref object
+            with a .value property:
+          </p>
+          <code
+            >const&nbsp;count&nbsp;=&nbsp;ref(0)<br /><br />console.log(count)&nbsp;//&nbsp;{&nbsp;value:&nbsp;0&nbsp;}<br />console.log(count.value)&nbsp;//&nbsp;0<br /><br />count.value++<br />console.log(count.value)&nbsp;//&nbsp;1<br
+          /></code>
+        </article>
+      </section>
+      <section class="main-section" id="Computed_Properties">
+        <header>Computed Properties</header>
+        <article>
+          <p>
+            For complex logic that includes reactive data, it is recommended to
+            use a computed property. Here's an example:
+          </p>
+          <code>
+            import&nbsp;{&nbsp;ref&nbsp;}&nbsp;from&nbsp;'vue'<br /><br />export&nbsp;default&nbsp;{<br />&nbsp;&nbsp;setup()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;count&nbsp;=&nbsp;ref(0)<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;increment()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;.value&nbsp;is&nbsp;needed&nbsp;in&nbsp;JavaScript<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count.value++<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;don't&nbsp;forget&nbsp;to&nbsp;expose&nbsp;the&nbsp;function&nbsp;as&nbsp;well.<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;increment<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;}<br />}<br />
+          </code>
+          <p>
+            Computed properties are by default getter-only. If you attempt to
+            assign a new value to a computed property, you will receive a
+            runtime warning. In the rare cases where you need a "writable"
+            computed property, you can create one by providing both a getter and
+            a setter:
+          </p>
+          <code>
+            &lt;script&nbsp;setup&gt;<br />import&nbsp;{&nbsp;ref,&nbsp;computed&nbsp;}&nbsp;from&nbsp;'vue'<br /><br />const&nbsp;firstName&nbsp;=&nbsp;ref('John')<br />const&nbsp;lastName&nbsp;=&nbsp;ref('Doe')<br /><br />const&nbsp;fullName&nbsp;=&nbsp;computed({<br />&nbsp;&nbsp;//&nbsp;getter<br />&nbsp;&nbsp;get()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;firstName.value&nbsp;+&nbsp;'&nbsp;'&nbsp;+&nbsp;lastName.value<br />&nbsp;&nbsp;},<br />&nbsp;&nbsp;//&nbsp;setter<br />&nbsp;&nbsp;set(newValue)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Note:&nbsp;we&nbsp;are&nbsp;using&nbsp;destructuring&nbsp;assignment&nbsp;syntax&nbsp;here.<br />&nbsp;&nbsp;&nbsp;&nbsp;[firstName.value,&nbsp;lastName.value]&nbsp;=&nbsp;newValue.split('&nbsp;')<br />&nbsp;&nbsp;}<br />})<br />&lt;/script&gt;
+          </code>
+        </article>
+      </section>
+      <section class="main-section" id="References">
+        <header>References</header>
+        <p>
+          All the documentation in this page is taken from
+          <a href="https://vuejs.org/guide/introduction.html">Vuejs.org</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
