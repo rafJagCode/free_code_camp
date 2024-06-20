@@ -4,41 +4,192 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Landing Page</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./script.js" defer></script>
   </head>
   <body>
-    <!--
-    When you click a .nav-link button in the nav element, you are taken to the corresponding section of the landing page
-    The navbar should always be at the top of the viewport
-    Your product landing page should have at least one media query
-    Your product landing page should utilize CSS flexbox at least once
--->
     <header id="header">
       <div class="logo">
-        <img src="" alt="" id="header-img" />
+        <img
+          src="https://raw.githubusercontent.com/rafJagCode/free_code_camp/f1f953d6c210e34788eff8cd0a1e4163dca5192b/rwd/product_landing_page/images/logo.svg"
+          alt="logo"
+          id="header-img"
+        />
       </div>
-      <nav id="navbar">
-        <ul>
-          <li><a href="" id="nav-link">Item1</a></li>
-          <li><a href="" id="nav-link">Item2</a></li>
-          <li><a href="" id="nav-link">Item3</a></li>
+      <nav id="nav-bar">
+        <button class="hamburger" onClick="toggleSidebar()">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </button>
+        <ul id="navbar-menu">
+          <li><a class="nav-link" href="#subscribtion">Subscription</a></li>
+          <li><a class="nav-link" href="#features">Features</a></li>
+          <li><a class="nav-link" href="#iframe-video">Video</a></li>
         </ul>
       </nav>
     </header>
-    <iframe src="" frameborder="0" id="video"></iframe>
-    <form
-      method="post"
-      action="https://www.freecodecamp.com/email-submit"
-      id="form"
-    >
-      <input
-        type="text"
-        id="email"
-        name="email"
-        type="email"
-        placeholder="Enter your e-mail address here"
-        required
-      />
-      <input type="text" id="submit" type="submit" />
-    </form>
+    <main>
+      <section class="hero-section">
+        <img
+          src="https://raw.githubusercontent.com/rafJagCode/free_code_camp/f1f953d6c210e34788eff8cd0a1e4163dca5192b/rwd/product_landing_page/images/illustration-working.svg"
+          alt="hero image"
+          class="hero-img"
+          alt="working image"
+        />
+        <div class="hero-text">
+          <h1 class="hero-title">More than just shorter links</h1>
+          <h2 class="hero-desc">
+            Build your brand's recognition and get detailed insights on how you
+            links are performing.
+          </h2>
+          <button class="hero-btn">Get Started</button>
+        </div>
+      </section>
+      <section id="subscribtion" class="section form-section">
+        <form
+          method="post"
+          action="https://www.freecodecamp.com/email-submit"
+          id="form"
+        >
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Enter your e-mail address here"
+            required
+          />
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </section>
+      <section id="features" class="section features-section">
+        <h3 class="features-title">Advanced Statistics</h3>
+        <p class="features-desc">
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </p>
+        <div class="cards">
+          <div class="card">
+            <div class="img-container">
+              <img
+                src="https://raw.githubusercontent.com/rafJagCode/free_code_camp/f1f953d6c210e34788eff8cd0a1e4163dca5192b/rwd/product_landing_page/images/icon-brand-recognition.svg"
+                alt="brand recogntion"
+                class="feature-img"
+              />
+            </div>
+            <div class="feature-text">
+              <h4 class="feature-title">Brand Recognition</h4>
+              <p class="feature-desc">
+                Boost your brand recognition with each click. Generic links
+                don't mean a thing. Branded links help instil confidence in your
+                content.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img-container">
+              <img
+                src="https://raw.githubusercontent.com/rafJagCode/free_code_camp/f1f953d6c210e34788eff8cd0a1e4163dca5192b/rwd/product_landing_page/images/icon-detailed-records.svg"
+                alt="detailed records"
+                class="feature-img"
+              />
+            </div>
+            <div class="feature-text">
+              <h4 class="feature-title">Detailed Records</h4>
+              <p class="feature-desc">
+                Gain insights into who is clicking your links.Knowing when and
+                where people engage with your content helps inform better
+                decisons.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="img-container">
+              <img
+                src="https://raw.githubusercontent.com/rafJagCode/free_code_camp/f1f953d6c210e34788eff8cd0a1e4163dca5192b/rwd/product_landing_page/images/icon-fully-customizable.svg"
+                alt="fully customizable"
+                class="feature-img"
+              />
+            </div>
+            <div class="feature-text">
+              <h4 class="feature-title">Fully Customizable</h4>
+              <p class="feature-desc">
+                Improve brand awareness and content discoverability through
+                customzable links, supercharging audience engagemenet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="iframe-video" class="video-section">
+        <h2 class="video-title">Boost your links today</h2>
+        <iframe
+          id="video"
+          width="300"
+          src="https://www.youtube.com/embed/azgwOwq7Rr8?si=aZRj773vUSTtnql5"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="footer-section logo-section">
+        <div class="footer-logo">
+          <img
+            src="https://raw.githubusercontent.com/rafJagCode/free_code_camp/e9254a7b51375bde69b6d2417f4d4fbdc62ac5b7/rwd/product_landing_page/images/logo-white.svg"
+            alt="logo"
+          />
+        </div>
+      </div>
+      <div class="footer-section section-after-logo">
+        <p class="footer-section-title">Features</p>
+        <ul>
+          <li>Link Shortening</li>
+          <li>Branded Links</li>
+          <li>Analytics</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <p class="footer-section-title">Resources</p>
+        <ul>
+          <li>Blog</li>
+          <li>Developers</li>
+          <li>Support</li>
+        </ul>
+      </div>
+      <div class="footer-section section-before-socials">
+        <p class="footer-section-title">Company</p>
+        <ul>
+          <li>About</li>
+          <li>Our Team</li>
+          <li>Careers</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="footer-section socials-section">
+        <img
+          src="https://raw.githubusercontent.com/rafJagCode/free_code_camp/e9254a7b51375bde69b6d2417f4d4fbdc62ac5b7/rwd/product_landing_page/images/icon-facebook.svg"
+          alt="facebook"
+        /><img
+          src="https://raw.githubusercontent.com/rafJagCode/free_code_camp/e9254a7b51375bde69b6d2417f4d4fbdc62ac5b7/rwd/product_landing_page/images/icon-instagram.svg"
+          alt="instagram"
+        /><img
+          src="https://raw.githubusercontent.com/rafJagCode/free_code_camp/e9254a7b51375bde69b6d2417f4d4fbdc62ac5b7/rwd/product_landing_page/images/icon-pinterest.svg"
+          alt="pintrest"
+        /><img
+          src="https://raw.githubusercontent.com/rafJagCode/free_code_camp/e9254a7b51375bde69b6d2417f4d4fbdc62ac5b7/rwd/product_landing_page/images/icon-twitter.svg"
+          alt="twitter"
+        />
+      </div>
+    </footer>
   </body>
 </html>
